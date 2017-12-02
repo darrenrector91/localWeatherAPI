@@ -3,37 +3,53 @@
 
 <head>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="js/latlong.js"></script> -->
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Local Weather</title>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="page-header">Local Weather</h1>
-    <!-- <p id="data"></p> -->
-    <div class="text-center">
-      <ul class="list-unstyled">
-        <!-- <img src="/images/codes/800.png" alt="">
-        <p id="icon"></p> -->
-        <p>
-        <input type="image" id="icon" class="weatherCondition">
-        </p>
-        <li class="btn btn-default" id="city"></li>
-        <li class="btn btn-default" id="weatherType"></li>
-        <li class="btn btn-default" id="fTemp"></li>
-        <li class="btn btn-default" id="windspeed"></li>
-      </ul>
+
+    <!-- <h1 class="page-header">Local Weather</h1> -->
+    <div class="weather-app">
+      <div class="left">
+        <div class="temperature">
+          <span id="fTemp">0</span></div>
+        <div class="location"><span id="city">Unknown</span></div>
+        <div class="weatherType">
+          <span id="weatherType"></span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="top">
+          <img src="images/codes/200.png" id="icon">
+
+        </div>
+        <div class="bottom">
+          <div class="humidity">
+            <span id="humidity">0</span>%
+            <!-- <img src="images/humidity_2.png" height="25px" /> -->
+
+          </div>
+          <div class="wind">
+            <span id="windspeed">0</span> mph
+            <span id="windDirection"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
-/Users/darrenrector/Projects/localWeatherAPI/images
+
 </html>
