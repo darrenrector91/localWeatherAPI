@@ -7,7 +7,9 @@ var kTemp;
 var icon;
 var zip = prompt("What is you zip code?")
 
-var api = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&APPID=33ae0b719c00fb27afcdf1981de535d6"
+var wunderGroundAPI = "e29ef9c01d8ee336";
+
+var api = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&APPID=33ae0b719c00fb27afcdf1981de535d6"
 
 // var api = "http://api.openweathermap.org/data/2.5/weather?zip=55428,us&APPID=33ae0b719c00fb27afcdf1981de535d6"
 
@@ -22,19 +24,11 @@ $.getJSON(api, function(data) {
   var formatChange = true;
   var icon = "/images/codes/" + (data.weather[0].id + ".png");
 
-  // function moon(string) {
-  //   if (imageCode === 800 && imageCode > 19) {
-  //     var icon = "/images/code/moon.jpg"
-  //   } else {
-  //     var icon = "/images/codes/" + (data.weather[0].id + ".png");
-  //   }
-  // }
   var input = document.getElementById('icon')
   var sunrise = unixConverter(data.sys.sunrise);
   var sunset = unixConverter(data.sys.sunset);
   input.src = icon;
   var dt = unixConverter(data.dt); // not updating often
-  console.log("image code: " + imageCode);
 
   function unixConverter(number) {
     var date = new Date(number * 1000);
@@ -45,16 +39,6 @@ $.getJSON(api, function(data) {
 
     return formattedTime;
   }
-
-  // function moon(string) {
-//   if (imageCode === 800 && imageCode > 19) {
-//     var icon = "/images/code/moon.jpg"
-//   } else {
-//     var icon = "/images/codes/" + (data.weather[0].id + ".png");
-//   }
-// }
-
-
 
   function switchMoon(imageCode) {
     if (imageCode === 800 && dt > 19 && dt < 6) {
@@ -109,7 +93,6 @@ $.getJSON(api, function(data) {
         return windDirection = "NW"
       } else windDirection = "NNW"
     }
-
   }
 
   $("#icon").html(icon)
