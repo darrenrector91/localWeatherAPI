@@ -9,9 +9,9 @@ var zip = prompt("What is you zip code?")
 
 var wunderGroundAPI = "e29ef9c01d8ee336";
 
-var api = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&APPID=33ae0b719c00fb27afcdf1981de535d6"
+var api = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&APPID=749da4002db4023d33f77723c728f9ec"
 
-// var api = "http://api.openweathermap.org/data/2.5/weather?zip=55428,us&APPID=33ae0b719c00fb27afcdf1981de535d6"
+// var api = "http://api.openweathermap.org/data/2.5/weather?zip=55428,us&APPID=749da4002db4023d33f77723c728f9ec"
 
 $.getJSON(api, function(data) {
   var weatherType = capitalizeFirstLetter(data.weather[0].description);
